@@ -29,21 +29,21 @@ st.markdown("""
     }
     </style>
     <h1 class="main-title">🚗 Análisis Inteligente de Accidentes 🚗</h1>
-    <p class="description">Explora datos de accidentes y crea gráficos interactivos con un toque visual atractivo.</p>
+    <p class="description">Explora datos de accidentes y crea gráficos interactivos.</p>
 """, unsafe_allow_html=True)
 
-st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="¡Explora tus datos de manera visual y dinámica!")
+st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="Madruga carajo")
 
 # Cargar datos desde la barra lateral
 with st.sidebar:
     st.markdown('<p class="sidebar-text">📂 Sube tu archivo CSV:</p>', unsafe_allow_html=True)
-    uploaded_file = st.file_uploader("Sube tu archivo aquí:", type=["csv"])
+    uploaded_file = st.file_uploader("Sube tu archivo de accidentes aquí:", type=["csv"])
     
     st.markdown('<p class="sidebar-text">🎨 Tema de gráficos:</p>', unsafe_allow_html=True)
     theme = st.radio("Selecciona un tema:", ["Plotly", "Seaborn", "Simple"])
     
     st.markdown("---")
-    st.image("https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif", width=300, caption="Haciendo análisis divertido")
+    
 
 # Si hay un archivo subido
 if uploaded_file:
@@ -127,5 +127,5 @@ st.markdown("""
         color: #888;
     }
     </style>
-    <p class="footer">🚀 Desarrollado con ❤️ por [Tu Nombre]</p>
+    <p class="footer">🚀 pongale bueno</p>
 """, unsafe_allow_html=True)
