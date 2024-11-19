@@ -115,7 +115,7 @@ if uploaded_file:
         st.error(f"Error al procesar el archivo: {e}")
 else:
     st.warning("Por favor, sube un archivo CSV para comenzar.")
-    st.image("https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif", caption="Esperando datos...")
+    st.image("https://giphy.com/gifs/zazu-war-cat-2zUn8hAwJwG4abiS0p", caption="Esperando datos...")
 
 # Footer
 st.markdown("---")
