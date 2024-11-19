@@ -3,15 +3,47 @@ import pandas as pd
 import plotly.express as px
 
 # Configuración de la página
-st.set_page_config(page_title="Análisis Inteligente de Accidentes", layout="wide", page_icon="🚗")
-st.title("🚗 **Análisis Inteligente de Accidentes**")
-st.markdown("Explora datos y genera gráficos con validaciones dinámicas para asegurar que las selecciones sean coherentes.")
+st.set_page_config(
+    page_title="Análisis Inteligente de Accidentes",
+    layout="wide",
+    page_icon="🚗"
+)
+
+# Encabezado principal con imagen
+st.markdown("""
+    <style>
+    .main-title {
+        text-align: center;
+        color: #FF4B4B;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    .description {
+        text-align: center;
+        color: #4F4F4F;
+        font-size: 20px;
+    }
+    .sidebar-text {
+        color: #FF4B4B;
+        font-weight: bold;
+    }
+    </style>
+    <h1 class="main-title">🚗 Análisis Inteligente de Accidentes 🚗</h1>
+    <p class="description">Explora datos de accidentes y crea gráficos interactivos con un toque visual atractivo.</p>
+""", unsafe_allow_html=True)
+
+st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="¡Explora tus datos de manera visual y dinámica!")
 
 # Cargar datos desde la barra lateral
 with st.sidebar:
-    uploaded_file = st.file_uploader("📂 Sube tu archivo CSV:", type=["csv"])
-    st.markdown("### 🎨 Tema de gráficos:")
+    st.markdown('<p class="sidebar-text">📂 Sube tu archivo CSV:</p>', unsafe_allow_html=True)
+    uploaded_file = st.file_uploader("Sube tu archivo aquí:", type=["csv"])
+    
+    st.markdown('<p class="sidebar-text">🎨 Tema de gráficos:</p>', unsafe_allow_html=True)
     theme = st.radio("Selecciona un tema:", ["Plotly", "Seaborn", "Simple"])
+    
+    st.markdown("---")
+    st.image("https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif", width=300, caption="Haciendo análisis divertido")
 
 # Si hay un archivo subido
 if uploaded_file:
@@ -20,14 +52,17 @@ if uploaded_file:
         data = pd.read_csv(uploaded_file)
         st.success(f"Archivo cargado exitosamente: **{uploaded_file.name}**")
         
-        # Obtener columnas y sus tipos
-        columns = data.columns.tolist()
-        column_types = data.dtypes.apply(lambda x: x.name).to_dict()
+        # Mostrar una tabla resumen
+        st.markdown("### 👀 Vista previa de los datos:")
+        st.dataframe(data.head())
 
         # Opciones de gráficos
         st.header("📊 Gráficos Inteligentes")
         chart_type = st.selectbox("Selecciona el tipo de gráfico:", 
                                   ["Barras", "Histograma", "Líneas", "Dispersión", "Torta"])
+
+        columns = data.columns.tolist()
+        column_types = data.dtypes.apply(lambda x: x.name).to_dict()
 
         # Selección del eje X
         x_axis = st.selectbox("Selecciona el eje X:", columns, help="Eje base del gráfico")
@@ -80,7 +115,17 @@ if uploaded_file:
         st.error(f"Error al procesar el archivo: {e}")
 else:
     st.warning("Por favor, sube un archivo CSV para comenzar.")
+    st.image("https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif", caption="Esperando datos...")
 
 # Footer
 st.markdown("---")
-st.markdown("📢 **Nota:** Las selecciones dinámicas aseguran que los datos sean compatibles con el tipo de gráfico.")
+st.markdown("""
+    <style>
+    .footer {
+        text-align: center;
+        font-size: 14px;
+        color: #888;
+    }
+    </style>
+    <p class="footer">🚀 Desarrollado con ❤️ por [Tu Nombre]</p>
+""", unsafe_allow_html=True)
