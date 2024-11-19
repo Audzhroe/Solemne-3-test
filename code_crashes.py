@@ -115,7 +115,7 @@ if uploaded_file:
         st.error(f"Error al procesar el archivo: {e}")
 else:
     st.warning("Por favor, sube un archivo CSV para comenzar.")
-    st.image("https://giphy.com/gifs/cat-meme-wilfrosty-mr-fresh-wr7oA0rSjnWuiLJOY5", caption="Esperando datos...")
+    st.image("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDQ5OXB5d3QyZHh6ZzhlcnpzcjlmeTV1dTZyYTZxdHFoOTQ1bzIxNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wr7oA0rSjnWuiLJOY5/giphy.gif", width=700, caption="Esperando datos...")
 
 # Footer
 st.markdown("---")
