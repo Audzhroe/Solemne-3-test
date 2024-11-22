@@ -107,7 +107,7 @@ if uploaded_file:
                 # Aplicar tema seleccionado
                 if theme == "Colores más tenues":
                     fig.update_layout(template="seaborn")
-                elif theme == "Colores simples":
+                elif theme == "Colores sólidos":
                     fig.update_layout(template="simple_white")
                 st.plotly_chart(fig, use_container_width=True)
     except Exception as e:
