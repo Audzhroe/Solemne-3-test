@@ -111,7 +111,7 @@ if uploaded_file:
                     fig.update_layout(template="simple_white")
                 st.plotly_chart(fig, use_container_width=True)
     except Exception as e:
-        st.error(f"Error al procesar el archivo: {e}"
+        st.error(f"Error al procesar el archivo: {e}")
         st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="bA""")
 else:
     st.warning("Por favor, sube un archivo CSV para comenzar.")
