@@ -28,8 +28,8 @@ st.markdown("""
         font-weight: bold;
     }
     </style>
-    <h1 class="main-title">🚗 Análisis Inteligente de Accidentes 🚗</h1>
-    <p class="description">Explora datos de accidentes y  .</p>
+    <h1 class="main-title">🚗 Datos de Accidentes 🚗</h1>
+    <p class="description">Explora los datos de los accidentes.</p>
 """, unsafe_allow_html=True)
 
 
@@ -56,7 +56,7 @@ if uploaded_file:
         st.dataframe(data.head(16))
 
         # Opciones de gráficos
-        st.header("📊 DATO""")
+        st.header("📊 Detalle de los Datos")
         chart_type = st.selectbox("Selecciona el tipo de gráfico:", 
                                   ["Barras", "Histograma", "Líneas", "Dispersión", "Torta"])
 
