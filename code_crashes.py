@@ -53,7 +53,7 @@ if uploaded_file:
         
         # Mostrar una tabla resumen
         st.markdown("### 👀 Vista previa de los datos:")
-        st.dataframe(data.head(15))
+        st.dataframe(data.head(16))
 
         # Opciones de gráficos
         st.header("📊 DATO""")
