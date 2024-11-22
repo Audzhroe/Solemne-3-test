@@ -49,16 +49,9 @@ if uploaded_file:
         data = pd.read_csv(uploaded_file)
         st.success(f"Archivo cargado exitosamente: **{uploaded_file.name}**")
 
-        # Verificar si hay una columna de años
-        year_column = None
-        for col in data.columns:
-            if pd.api.types.is_numeric_dtype(data[col]) and "año" in col.lower():
-                year_column = col
-                break
-
-        # Aplicar filtro por años si existe una columna válida
-        if year_column:
-            min_year, max_year = int(data[year_column].min()), int(data[year_column].max())
+        # Verificar si existe la columna "Crash Year"
+        if "Crash Year" in data.columns:
+            min_year, max_year = int(data["Crash Year"].min()), int(data["Crash Year"].max())
             with st.sidebar:
                 selected_years = st.slider(
                     "Selecciona el rango de años:",
@@ -68,8 +61,10 @@ if uploaded_file:
                     step=1
                 )
             # Filtrar los datos
-            data = data[(data[year_column] >= selected_years[0]) & (data[year_column] <= selected_years[1])]
+            data = data[(data["Crash Year"] >= selected_years[0]) & (data["Crash Year"] <= selected_years[1])]
             st.info(f"Datos filtrados para los años: {selected_years[0]} - {selected_years[1]}")
+        else:
+            st.warning("No se encontró la columna 'Crash Year'. No se aplicó filtro de años.")
 
         # Mostrar una vista previa de los datos
         st.markdown("### 👀 Vista previa de los datos:")
