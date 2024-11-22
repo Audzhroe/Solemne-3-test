@@ -114,7 +114,7 @@ if uploaded_file:
         st.error(f"Error al procesar el archivo: {e}")
 else: 
     st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="bA""")
-elif:
+elif True:
     st.warning("Por favor, sube un archivo CSV para comenzar.")
     st.image("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDQ5OXB5d3QyZHh6ZzhlcnpzcjlmeTV1dTZyYTZxdHFoOTQ1bzIxNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wr7oA0rSjnWuiLJOY5/giphy-downsized.gif", width=250, caption="Esperando datos...")
 
