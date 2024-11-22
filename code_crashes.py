@@ -127,5 +127,5 @@ st.markdown("""
         color: #888;
     }
     </style>
-    <p class="footer">🚀 pongale bueno</p>
+    <p class="footer">🚀 Creado por estudiantes de la USS</p>
 """, unsafe_allow_html=True)
