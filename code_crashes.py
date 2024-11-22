@@ -29,18 +29,18 @@ st.markdown("""
     }
     </style>
     <h1 class="main-title">🚗 Análisis Inteligente de Accidentes 🚗</h1>
-    <p class="description">Explora datos de accidentes y crea gráficos interactivos.</p>
+    <p class="description">Explora datos de accidentes y  .</p>
 """, unsafe_allow_html=True)
 
-st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="Madruga carajo")
+st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="bA""")
 
 # Cargar datos desde la barra lateral
 with st.sidebar:
     st.markdown('<p class="sidebar-text">📂 Sube tu archivo CSV:</p>', unsafe_allow_html=True)
     uploaded_file = st.file_uploader("Sube tu archivo de accidentes aquí:", type=["csv"])
     
-    st.markdown('<p class="sidebar-text">🎨 Tema de gráficos:</p>', unsafe_allow_html=True)
-    theme = st.radio("Selecciona un tema:", ["Plotly", "Seaborn", "Simple"])
+    st.markdown('<p class="sidebar-text">🎨 Tema de los gráficos:</p>', unsafe_allow_html=True)
+    theme = st.radio("Selecciona un tema:", ["Colores Simples", "Colores más tenues", "Colores sólidos"])
     
     st.markdown("---")
     
@@ -57,7 +57,7 @@ if uploaded_file:
         st.dataframe(data.head())
 
         # Opciones de gráficos
-        st.header("📊 Gráficos Inteligentes")
+        st.header("📊 DATO""")
         chart_type = st.selectbox("Selecciona el tipo de gráfico:", 
                                   ["Barras", "Histograma", "Líneas", "Dispersión", "Torta"])
 
