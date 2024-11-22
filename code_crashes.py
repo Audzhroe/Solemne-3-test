@@ -32,7 +32,6 @@ st.markdown("""
     <p class="description">Explora datos de accidentes y  .</p>
 """, unsafe_allow_html=True)
 
-st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="bA""")
 
 # Cargar datos desde la barra lateral
 with st.sidebar:
@@ -113,6 +112,8 @@ if uploaded_file:
                 st.plotly_chart(fig, use_container_width=True)
     except Exception as e:
         st.error(f"Error al procesar el archivo: {e}")
+else: 
+    st.image("https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", width=700, caption="bA""")
 else:
     st.warning("Por favor, sube un archivo CSV para comenzar.")
     st.image("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDQ5OXB5d3QyZHh6ZzhlcnpzcjlmeTV1dTZyYTZxdHFoOTQ1bzIxNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wr7oA0rSjnWuiLJOY5/giphy-downsized.gif", width=250, caption="Esperando datos...")
