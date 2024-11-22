@@ -105,9 +105,9 @@ if uploaded_file:
                     fig = px.pie(data, names=x_axis, title=title)
 
                 # Aplicar tema seleccionado
-                if theme == "Seaborn":
+                if theme == "Colores más tenues":
                     fig.update_layout(template="seaborn")
-                elif theme == "Simple":
+                elif theme == "Colores simples":
                     fig.update_layout(template="simple_white")
                 st.plotly_chart(fig, use_container_width=True)
     except Exception as e:
